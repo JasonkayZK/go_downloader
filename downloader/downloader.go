@@ -121,7 +121,7 @@ func (d *FileDownloader) getHeaderInfo() (int, error) {
 	headers := map[string]string{
 		"User-Agent": userAgent,
 	}
-	r, err := getNewRequest(d.url, "HEADER", headers)
+	r, err := getNewRequest(d.url, "HEAD", headers)
 	resp, err := http.DefaultClient.Do(r)
 	if err != nil {
 		return 0, err
